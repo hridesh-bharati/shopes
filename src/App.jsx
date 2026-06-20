@@ -1,0 +1,31 @@
+import React from 'react';
+import { Routes, Route } from 'react-router-dom'; // 👈 Routes इम्पोर्ट करें
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Properties from './components/Properties';
+import WhyUs from './components/WhyUs';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+
+function App() {
+  return (
+    <div className="d-flex flex-column min-vh-screen bg-light">
+      <Navbar />
+      
+      <main className="flex-grow-1">
+        {/* Dynamic URL Routing */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/properties" element={<Properties />} />
+          <Route path="/why-us" element={<WhyUs />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </main>
+      
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
