@@ -106,8 +106,8 @@ const Footer = () => {
               </button>
             </div>
             <div className="d-flex gap-3 text-white-50 small">
-              <span><i className="bi bi-envelope me-1"></i> support@propunlock.com</span>
-              <span><i className="bi bi-phone me-1"></i> +91 98765 43210</span>
+              <span><i className="bi bi-envelope me-1"></i> hridesh027@gmail.com</span>
+              <span><i className="bi bi-phone me-1"></i> +91 7267995307 </span>
             </div>
           </div>
         </div>
