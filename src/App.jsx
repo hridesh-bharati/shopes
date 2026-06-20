@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom'; // 👈 Routes इम्पोर्ट करें
+import { Routes, Route } from 'react-router-dom'; 
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Properties from './components/Properties';
@@ -13,7 +13,6 @@ function App() {
       <Navbar />
       
       <main className="flex-grow-1">
-        {/* Dynamic URL Routing */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/properties" element={<Properties />} />
