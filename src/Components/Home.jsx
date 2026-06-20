@@ -2,7 +2,6 @@
 // GREEN LEMON THEME · FULL SHOPPING WEBSITE EXPERIENCE · REACT + BOOTSTRAP CORE
 
 import React, { useState } from 'react';
-import Footer from './Footer';
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState('buy');
@@ -390,19 +389,6 @@ const Home = () => {
               </div>
             ))}
           </div>
-
-          <div className="text-center mt-5">
-            <button className="btn px-5 py-3 rounded-pill fw-semibold" style={{ 
-              background: 'transparent',
-              border: '2px solid #7cb342',
-              color: '#33691e',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => { e.target.style.background = '#7cb342'; e.target.style.color = 'white'; }}
-            onMouseLeave={(e) => { e.target.style.background = 'transparent'; e.target.style.color = '#33691e'; }}>
-              🍋 View All Properties <i className="bi bi-arrow-right ms-2"></i>
-            </button>
-          </div>
         </div>
       </section>
 
@@ -637,8 +623,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ================= FOOTER ================= */}
-      <Footer />
 
       {/* ================= COMPLETE STYLES ================= */}
       <style>{`
