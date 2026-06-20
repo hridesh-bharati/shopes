@@ -111,59 +111,89 @@ const Home = () => {
           We connect genuine buyers with trusted property owners & builders to make real estate simple, fast, and reliable.
         </p>
 
-        {/* Search / Filter Card - Shopping Style */}
-        <div className="card border-0 shadow-lg p-3 mb-4 bg-white rounded-4 text-start" style={{ boxShadow: '0 12px 30px rgba(0,0,0,0.08)' }}>
-          <div className="nav nav-pills mb-3 gap-2" role="tablist">
-            {['buy', 'sell', 'rent'].map((tab) => (
-              <button
-                key={tab}
-                className={`nav-link rounded-pill px-4 text-capitalize fw-medium border-0 ${activeTab === tab ? 'active' : 'bg-light text-dark'}`}
-                style={activeTab === tab ? { background: 'linear-gradient(135deg, #0d47a1, #1976d2)', color: 'white' } : {}}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab === 'buy' && <i className="bi bi-house-door me-1"></i>}
-                {tab === 'sell' && <i className="bi bi-tag me-1"></i>}
-                {tab === 'rent' && <i className="bi bi-key me-1"></i>}
-                {tab}
-              </button>
-            ))}
-          </div>
-          <div className="row g-2">
-            <div className="col-sm-7">
-              <div className="input-group">
-                <span className="input-group-text bg-light border-0 text-muted"><i className="bi bi-geo-alt"></i></span>
-                <input type="text" className="form-control bg-light border-0 py-2" placeholder="Search locality, city..." />
-              </div>
-            </div>
-            <div className="col-sm-5">
-              <button className="btn w-100 py-2 rounded-3 fw-medium h-100 shadow-sm text-white" style={{ background: 'linear-gradient(135deg, #0d47a1, #1976d2)', border: 'none' }}>
-                <i className="bi bi-search me-1"></i> Search
-              </button>
-            </div>
-          </div>
-        </div>
+       {/* Search / Filter Card - Absolute Inline (No Mobile Wrap) */}
+<div className="card  border-0 shadow-lg p-3 mb-4 bg-white rounded-4 text-center m-auto w-100" style={{ boxShadow: '0 12px 40px rgba(0,0,0,0.06)' }}>
+  
+  {/* Tab Switches */}
+  <div className="nav nav-pills mb-3 gap-1 p-1 bg-light rounded-pill d-inline-flex" role="tablist" style={{ width: 'fit-content' }}>
+    {['buy', 'sell', 'rent'].map((tab) => (
+      <button
+        key={tab}
+        className={`nav-link rounded-pill px-3 py-1.5 text-capitalize fw-semibold border-0 small transition-all ${activeTab === tab ? 'active shadow-sm' : 'text-muted bg-transparent'}`}
+        style={activeTab === tab ? { background: 'linear-gradient(135deg, #0d47a1, #1976d2)', color: 'white', fontSize: '0.85rem' } : { fontSize: '0.85rem' }}
+        onClick={() => setActiveTab(tab)}
+      >
+        {tab === 'buy' && <i className="bi bi-house-door me-1"></i>}
+        {tab === 'sell' && <i className="bi bi-tag me-1"></i>}
+        {tab === 'rent' && <i className="bi bi-key me-1"></i>}
+        {tab}
+      </button>
+    ))}
+  </div>
 
-        {/* CTA Buttons */}
-        <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
-          <a href="#properties" className="btn btn-lg px-5 py-3 rounded-3 fw-semibold shadow text-white" style={{ 
-            background: 'linear-gradient(135deg, #0d47a1, #1976d2)',
-            border: 'none',
-            boxShadow: '0 8px 25px rgba(25, 118, 210, 0.35)',
-            transition: 'all 0.3s ease'
+  {/* Strict Non-Wrapping Row Container */}
+  <div className="row g-2 align-items-center flex-nowrap">
+    
+    {/* Input Box: Takes up 75% width on all screens */}
+    <div className="col-9">
+      <div className="input-group flex-nowrap bg-light rounded-3 overflow-hidden">
+        <span className="input-group-text bg-transparent border-0 text-muted ps-2 pe-1 ps-sm-3 pe-sm-2">
+          <i className="bi bi-geo-alt-fill text-primary" style={{ fontSize: '0.9rem' }}></i>
+        </span>
+        <input 
+          type="text" 
+          className="form-control bg-transparent border-0 py-2.5 text-dark w-100 shadow-none" 
+          placeholder="Search locality, city..." 
+          style={{ 
+            fontSize: 'calc(13px + 0.2vw)', 
+            outline: 'none',
+            minWidth: '0' /* Form input overflow blocker */
           }}
-          onMouseEnter={(e) => { e.target.style.transform = 'translateY(-3px)'; e.target.style.boxShadow = '0 12px 35px rgba(25, 118, 210, 0.45)'; }}
-          onMouseLeave={(e) => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 8px 25px rgba(25, 118, 210, 0.35)'; }}>
-            🏠 Explore Properties
-          </a>
-          <a href="#contact" className="btn btn-outline-primary btn-lg px-5 py-3 rounded-3 fw-semibold" style={{ 
-            borderWidth: '2px',
-            transition: 'all 0.3s ease'
-          }}
-          onMouseEnter={(e) => { e.target.style.background = '#1976d2'; e.target.style.color = 'white'; e.target.style.transform = 'translateY(-3px)'; }}
-          onMouseLeave={(e) => { e.target.style.background = 'transparent'; e.target.style.color = '#1976d2'; e.target.style.transform = 'translateY(0)'; }}>
-            <i className="bi bi-telephone-outbound me-2"></i> Get Free Consultation
-          </a>
-        </div>
+        />
+      </div>
+    </div>
+    
+    {/* Button Box: Takes up remaining 25% width without wrapping */}
+    <div className="col-3">
+      <button 
+        className="btn w-100 py-2.5 rounded-3 fw-bold shadow-sm text-white d-flex align-items-center justify-content-center gap-1" 
+        style={{ 
+          background: 'linear-gradient(135deg, #0d47a1, #1976d2)', 
+          border: 'none',
+          whiteSpace: 'nowrap'
+        }}
+      >
+        <i className="bi bi-search"></i>
+        {/* 'd-none d-sm-inline' guarantees text vanishes on ultra-small screens to preserve design */}
+        <span className="d-none d-sm-inline">Search</span>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+    {/* CTA Buttons */}
+<div className="d-flex flex-row gap-2 justify-content-center justify-content-lg-start">
+  {/* Primary Blue Button */}
+  <a href="#properties" className="btn btn-sm btn-md-lg px-3 px-sm-5 py-2 py-sm-3 rounded-3 fw-semibold shadow text-white" style={{ 
+    background: 'linear-gradient(135deg, #0d47a1, #1976d2)',
+    border: 'none',
+    boxShadow: '0 8px 25px rgba(25, 118, 210, 0.35)',
+    fontSize: 'calc(12px + 0.3vw)' /* मोबाइल पर छोटा टेक्स्ट, बड़ी स्क्रीन पर सामान्य */
+  }}>
+    🏠 Explore Properties
+  </a>
+  
+  {/* Colored (Secondary) Button */}
+  <a href="#contact" className="btn btn-sm btn-md-lg px-3 px-sm-5 py-2 py-sm-3 rounded-3 fw-semibold text-white" style={{ 
+    background: '#1976d2',
+    border: 'none',
+    boxShadow: '0 8px 25px rgba(25, 118, 210, 0.2)',
+    fontSize: 'calc(12px + 0.3vw)'
+  }}>
+    <i className="bi bi-telephone-outbound me-2"></i> Get Free Consultation
+  </a>
+</div>
 
         {/* Trust Line */}
         <div className="mt-4 pt-3 border-top" style={{ borderColor: '#e0e0e0' }}>
