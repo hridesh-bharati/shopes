@@ -1,5 +1,4 @@
 // ================= HOME COMPONENT (Home.jsx) =================
-// GREEN LEMON THEME · FULL SHOPPING WEBSITE EXPERIENCE · REACT + BOOTSTRAP CORE
 
 import React, { useState } from 'react';
 
@@ -307,7 +306,7 @@ const Home = () => {
           <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap">
             <div>
               <span className="fw-bold text-uppercase small tracking-wider px-3 py-1 rounded-pill" style={{ background: '#dcedc8', color: '#33691e', letterSpacing: '0.08em' }}>
-                🍋 Featured Listings
+                 Featured Listings
               </span>
               <h2 className="fw-bold mt-1" style={{ color: '#1b3a0b' }}>Fresh Picks for You</h2>
             </div>

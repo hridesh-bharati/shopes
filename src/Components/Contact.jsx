@@ -11,8 +11,8 @@ const Contact = () => {
               <p className="text-white-50">Have questions about documentation or property pricing? Send a request now.</p>
             </div>
             <div className="mt-4">
-              <p className="mb-2"><i className="bi bi-telephone text-primary me-2"></i> +91 98765 43210</p>
-              <p className="mb-0"><i className="bi bi-envelope text-primary me-2"></i> contact@propunlock.com</p>
+              <p className="mb-2"><i className="bi bi-telephone text-primary me-2"></i> +91 7267995307</p>
+              <p className="mb-0"><i className="bi bi-envelope text-primary me-2"></i> hridesh027@gmail.com</p>
             </div>
           </div>
           <div className="col-md-6 p-5">
